@@ -8,7 +8,7 @@ export class AgentOrchestrator {
   private llm: OllamaLLM;
   private mcpManager: MCPClientManager;
   private contexts: Map<string, ConversationContext> = new Map();
-  private wss: WebSocketServer;
+  private wss: WebSocketServer | null = null;
 
   constructor(llm: OllamaLLM, mcpManager: MCPClientManager) {
     this.llm = llm;
@@ -17,9 +17,10 @@ export class AgentOrchestrator {
 
   start(port: number): void {
     const server = createServer();
-    this.wss = new WebSocketServer({ server });
+    const wss = new WebSocketServer({ server });
+    this.wss = wss;
 
-    this.wss.on('connection', (ws: WebSocket) => {
+    wss.on('connection', (ws: WebSocket) => {
       const sessionId = this.generateSessionId();
       this.contexts.set(sessionId, new ConversationContext(sessionId));
 
