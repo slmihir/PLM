@@ -4,7 +4,6 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@virgio/mcp-core": ["../mcp-core/src"],
       "@virgio/shared": ["../shared/src"]
     }
   },
