@@ -1,0 +1,23 @@
+{
+  "name": "@virgio/mcp-designer",
+  "version": "1.0.0",
+  "description": "Designer MCP Server",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@virgio/mcp-core": "workspace:*",
+    "@virgio/shared": "workspace:*",
+    "axios": "^1.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.3"
+  }
+}
+

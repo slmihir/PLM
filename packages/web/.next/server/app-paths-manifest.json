@@ -1,0 +1,6 @@
+{
+  "/page": "app/page.js",
+  "/designer/page": "app/designer/page.js",
+  "/tech-spec/page": "app/tech-spec/page.js",
+  "/designer/products/new/page": "app/designer/products/new/page.js"
+}
